@@ -4,7 +4,8 @@ server :
 
 mode:
   develop : false
-
+  JwtKey : 89js82js72
+  JwtIssuer : gintest
 db:
   dsn : root:123456@tcp(127.0.0.1:3306)/gintest?charset=utf8mb4&parseTime=True&loc=Local
   SetMaxIdleConns : 10

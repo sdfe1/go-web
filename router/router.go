@@ -12,6 +12,7 @@ func InitRouter() {
 		user := rgPublic.Group("user")
 		{
 			user.POST("add", v1.AddUser)
+			user.POST("login", v1.Login)
 		}
 	}
 	_ = r.Run(":4911")

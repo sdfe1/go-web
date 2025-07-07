@@ -23,3 +23,18 @@ func CreateUser(user *User) int {
 	}
 	return message.SUCCESS
 }
+
+// 检验登录
+func CheckLogin(user *User) int {
+	var dbUser User
+	//1.检验用户名是否存在
+	result := db.Where("username = ?", user.Username).First(&dbUser)
+	if result == nil {
+		return message.ERROR_USER_NO_RIGHT
+	}
+	//2.检验对应的密码是否正确
+	if user.Password != dbUser.Password {
+		return message.ERROR_PASSWORD_WRONG
+	}
+	return message.SUCCESS
+}
