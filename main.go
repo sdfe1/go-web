@@ -13,6 +13,7 @@ func main() {
 	config.InitConfig()
 	//2.初始化数据库
 	model.InitDb()
+	model.InitRedis()
 	//3.设置路由
 	router.InitRouter()
 }

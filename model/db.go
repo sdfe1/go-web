@@ -28,7 +28,7 @@ func InitDb() {
 	fmt.Println("数据库连接成功")
 	//获取底层连接池
 	sqlDB, _ := db.DB()
-	err = db.AutoMigrate(&User{})
+	err = db.AutoMigrate(&User{}, &Article{})
 	if err != nil {
 		fmt.Println("自动迁移失败:", err)
 		return

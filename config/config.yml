@@ -10,5 +10,8 @@ db:
   dsn : root:123456@tcp(127.0.0.1:3306)/gintest?charset=utf8mb4&parseTime=True&loc=Local
   SetMaxIdleConns : 10
   SetMaxOpenConns : 10
+redis:
+  addr: "localhost:16379"
+  password: ""
 
 
